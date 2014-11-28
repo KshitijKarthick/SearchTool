@@ -31,4 +31,12 @@ public class FileMatcher {
         }
         return list;
     }
+    public LinkedList containsPattern(String pattern){
+        LinkedList list=new LinkedList();
+        for(File filename:ListFiles()){
+            if(filename.getName().contains(pattern))
+                list.add(filename);
+        }
+        return list;
+    }
 }
