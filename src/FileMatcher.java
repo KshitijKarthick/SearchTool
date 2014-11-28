@@ -11,17 +11,19 @@ import java.io.File;
 import java.util.LinkedList;
 public class FileMatcher {
     private String path;
-    public void FileMatcher(){
-        setPath(".");
-    }
-    public void FileMatcher(String path){
+    public FileMatcher(String path){
         setPath(path);
+    }
+    public FileMatcher(){
+        setPath(".");
     }
     public void setPath(String path){
         this.path=path;
     }
-    public File[] ListFiles(){
-        return this.ListFiles();
+    private File[] ListFiles(){
+        File f=new File(path);
+        //System.out.println(f.getPath()+"->"+(f.listFiles()[0]).getName());
+        return f.listFiles();
     }
     public LinkedList endsWithPattern(String pattern){
         LinkedList list=new LinkedList();
@@ -42,8 +44,10 @@ public class FileMatcher {
      public LinkedList regExPattern(String pattern){
         LinkedList list=new LinkedList();
         for(File filename:ListFiles()){
-            if(filename.getName().matches(pattern))
+            if(filename.getName().matches(pattern)){
                 list.add(filename);
+                System.out.println(filename);
+            }
         }
         return list;
     }
