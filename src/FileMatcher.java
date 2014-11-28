@@ -39,4 +39,12 @@ public class FileMatcher {
         }
         return list;
     }
+     public LinkedList regExPattern(String pattern){
+        LinkedList list=new LinkedList();
+        for(File filename:ListFiles()){
+            if(filename.getName().matches(pattern))
+                list.add(filename);
+        }
+        return list;
+    }
 }
