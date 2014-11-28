@@ -9,7 +9,9 @@
  */
 import java.io.File;
 import java.util.LinkedList;
-public class FileMatcher {
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+public final class FileMatcher {
     private String path;
     public FileMatcher(String path){
         setPath(path);
@@ -41,12 +43,14 @@ public class FileMatcher {
         }
         return list;
     }
-     public LinkedList regExPattern(String pattern){
+    public LinkedList regExPattern(String pattern){
+        Pattern r = Pattern.compile(pattern);
         LinkedList list=new LinkedList();
         for(File filename:ListFiles()){
-            if(filename.getName().matches(pattern)){
+            Matcher m = r.matcher(filename.getName());
+            if(m.matches()){
                 list.add(filename);
-                System.out.println(filename);
+                //System.out.println(filename);
             }
         }
         return list;
