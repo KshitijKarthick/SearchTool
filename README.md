@@ -26,3 +26,8 @@
   * Search in Directories Present in the Specified Directory.
   * Additional Functionality in Searching.
   * Formatted Display in Output Window.
+
+## Working :
+![Image](/img/browse.png "Browse Functionality")
+
+![Image](/img/output.png "Search Functionality")
