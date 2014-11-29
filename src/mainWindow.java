@@ -1,11 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 /**
- *
+ * [ MIT LICENSE ]
  * @author kshitijkarthick
+ * @email kshitij.karthick@gmail.
+ * GUI Interface for the Search Tool.
  */
 import java.util.LinkedList;
 import java.io.File;
@@ -165,35 +162,59 @@ public class mainWindow extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /***
+     * Browse Button.
+     * @param evt Receives the Event. 
+     */
     private void buttonBrowseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBrowseActionPerformed
         // TODO add your handling code here:
         jFileChooser1.showOpenDialog(this);
         files.setPath(jFileChooser1.getCurrentDirectory().getAbsolutePath());
     }//GEN-LAST:event_buttonBrowseActionPerformed
-
+    
+    /***
+     * Pattern Reg Exp Button.   
+     * @param evt Receives the Event.
+     */
     private void buttonRegExPatternActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRegExPatternActionPerformed
         // TODO add your handling code here:
         inputTextField.setText(" Reg Exp Notation");
         choice=3;
     }//GEN-LAST:event_buttonRegExPatternActionPerformed
-
+    
+    /***
+     * Pattern Ends With Button.   
+     * @param evt Receives the Event.
+     */
     private void buttonPatternEndsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPatternEndsActionPerformed
         // TODO add your handling code here:
         inputTextField.setText("    Input String");
         choice=2;
     }//GEN-LAST:event_buttonPatternEndsActionPerformed
-
+    
+    /***
+     * Pattern Contains Button.   
+     * @param evt Receives the Event.
+     */
     private void buttonPatternContainsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPatternContainsActionPerformed
         // TODO add your handling code here:
         inputTextField.setText("    Input String");
         choice=1;
     }//GEN-LAST:event_buttonPatternContainsActionPerformed
-
+    
+    /***
+     * Search Button.
+     * @param evt Receives the Event
+     */
     private void buttonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSearchActionPerformed
         // TODO add your handling code here:
         userChoice(choice);
     }//GEN-LAST:event_buttonSearchActionPerformed
     
+    /***
+     * Displays The LinkedList[File] in the Output Window.
+     * @param list LinkedList[File] Received by Search Operation.
+     */
     private void displayFileList(LinkedList list){
         outputWindow.setText("Output Window:");
         int length=list.size();
@@ -208,6 +229,13 @@ public class mainWindow extends javax.swing.JFrame {
         }
     }
     
+    /***
+     * Calls the Required Search Function based on the Choice.
+     * @param choice User Input to perform a Specific Operation.
+     * choice -> 1 : Contains Pattern
+     * choice -> 2 : Ends With Pattern
+     * choice -> 3 : Reg Expression Pattern
+     */
     private void userChoice(int choice){
         String text=inputTextField.getText();
         LinkedList list;
