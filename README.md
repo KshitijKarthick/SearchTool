@@ -5,6 +5,8 @@
    * Search Preferences based on User Choice.
    * Output Window to Display Details.
 
+![Image](/img/mainWindow.png "GUI Interface")
+
 ## Program Details :
    * Program is written in Java.
    * Search Based on the following options:
