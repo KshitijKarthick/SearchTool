@@ -35,60 +35,60 @@ public class mainWindow extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
-        jTextField1 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        outputWindow = new javax.swing.JTextArea();
+        buttonSearch = new javax.swing.JButton();
+        buttonPatternContains = new javax.swing.JToggleButton();
+        buttonPatternEnds = new javax.swing.JToggleButton();
+        buttonRegExPattern = new javax.swing.JToggleButton();
+        inputTextField = new javax.swing.JTextField();
+        buttonBrowse = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("Output Window");
-        jScrollPane1.setViewportView(jTextArea1);
+        outputWindow.setColumns(20);
+        outputWindow.setRows(5);
+        outputWindow.setText("Output Window");
+        jScrollPane1.setViewportView(outputWindow);
 
-        jButton1.setText("Search");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        buttonSearch.setText("Search");
+        buttonSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                buttonSearchActionPerformed(evt);
             }
         });
 
-        buttonGroup1.add(jToggleButton1);
-        jToggleButton1.setSelected(true);
-        jToggleButton1.setText("Pattern Contains");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(buttonPatternContains);
+        buttonPatternContains.setSelected(true);
+        buttonPatternContains.setText("Pattern Contains");
+        buttonPatternContains.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                buttonPatternContainsActionPerformed(evt);
             }
         });
 
-        buttonGroup1.add(jToggleButton2);
-        jToggleButton2.setText("Pattern Ends");
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(buttonPatternEnds);
+        buttonPatternEnds.setText("Pattern Ends");
+        buttonPatternEnds.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
+                buttonPatternEndsActionPerformed(evt);
             }
         });
 
-        buttonGroup1.add(jToggleButton3);
-        jToggleButton3.setText("Reg Expression");
-        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(buttonRegExPattern);
+        buttonRegExPattern.setText("Reg Expression");
+        buttonRegExPattern.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton3ActionPerformed(evt);
+                buttonRegExPatternActionPerformed(evt);
             }
         });
 
-        jTextField1.setText("    Input String");
+        inputTextField.setText("    Input String");
 
-        jButton2.setText("Browse");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        buttonBrowse.setText("Browse");
+        buttonBrowse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                buttonBrowseActionPerformed(evt);
             }
         });
 
@@ -100,18 +100,18 @@ public class mainWindow extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jToggleButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jToggleButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jToggleButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(buttonRegExPattern, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(buttonPatternContains, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(buttonPatternEnds, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton1)
+                        .addComponent(buttonSearch)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2))
+                        .addComponent(buttonBrowse))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(41, 41, 41)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(inputTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -120,18 +120,18 @@ public class mainWindow extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(inputTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1)
-                            .addComponent(jButton2)))
+                            .addComponent(buttonSearch)
+                            .addComponent(buttonBrowse)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(9, 9, 9)
-                        .addComponent(jToggleButton1)
+                        .addComponent(buttonPatternContains)
                         .addGap(12, 12, 12)
-                        .addComponent(jToggleButton2)
+                        .addComponent(buttonPatternEnds)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jToggleButton3)))
+                        .addComponent(buttonRegExPattern)))
                 .addGap(8, 8, 8)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE))
         );
@@ -165,43 +165,43 @@ public class mainWindow extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void buttonBrowseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBrowseActionPerformed
         // TODO add your handling code here:
         jFileChooser1.showOpenDialog(this);
         files.setPath(jFileChooser1.getCurrentDirectory().getAbsolutePath());
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_buttonBrowseActionPerformed
 
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
+    private void buttonRegExPatternActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRegExPatternActionPerformed
         // TODO add your handling code here:
-        jTextField1.setText(" Reg Exp Notation");
+        inputTextField.setText(" Reg Exp Notation");
         choice=3;
-    }//GEN-LAST:event_jToggleButton3ActionPerformed
+    }//GEN-LAST:event_buttonRegExPatternActionPerformed
 
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+    private void buttonPatternEndsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPatternEndsActionPerformed
         // TODO add your handling code here:
-        jTextField1.setText("    Input String");
+        inputTextField.setText("    Input String");
         choice=2;
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
+    }//GEN-LAST:event_buttonPatternEndsActionPerformed
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void buttonPatternContainsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPatternContainsActionPerformed
         // TODO add your handling code here:
-        jTextField1.setText("    Input String");
+        inputTextField.setText("    Input String");
         choice=1;
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    }//GEN-LAST:event_buttonPatternContainsActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void buttonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSearchActionPerformed
         // TODO add your handling code here:
         userChoice(choice);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_buttonSearchActionPerformed
     
     private void displayFileList(LinkedList list){
-        jTextArea1.setText("Output Window:");
+        outputWindow.setText("Output Window:");
         int length=list.size();
         File file;
         for(int i=0;i<length;i++){
             file=(File) list.removeFirst();
             try {
-                jTextArea1.setText(jTextArea1.getText()+"\n\nFilename: "+file.getName()+"\t\tPath: "+file.getCanonicalPath());
+                outputWindow.setText(outputWindow.getText()+"\n\nFilename: "+file.getName()+"\t\tPath: "+file.getCanonicalPath());
             } catch (IOException ex) {
                 Logger.getLogger(mainWindow.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -209,7 +209,7 @@ public class mainWindow extends javax.swing.JFrame {
     }
     
     private void userChoice(int choice){
-        String text=jTextField1.getText();
+        String text=inputTextField.getText();
         LinkedList list;
         switch(choice){
             case 1:{
@@ -217,7 +217,7 @@ public class mainWindow extends javax.swing.JFrame {
                     list=files.containsPattern(text);
                 }
                 else{
-                    jTextArea1.setText("Please Input a String:");
+                    outputWindow.setText("Please Input a String:");
                     return;
                 }
                 break;
@@ -227,7 +227,7 @@ public class mainWindow extends javax.swing.JFrame {
                     list=files.endsWithPattern(text);
                 }
                 else{
-                    jTextArea1.setText("Please Input a String:");
+                    outputWindow.setText("Please Input a String:");
                     return;
                 }
                 break;
@@ -237,13 +237,13 @@ public class mainWindow extends javax.swing.JFrame {
                     list=files.regExPattern(text);
                 }
                 else{
-                    jTextArea1.setText("Please Input a Reg Exp Notation:");
+                    outputWindow.setText("Please Input a Reg Exp Notation:");
                     return;
                 }
                 break;
             }
             default:{
-                jTextArea1.setText("Error Invalid Choice.");
+                outputWindow.setText("Error Invalid Choice.");
                 return;
             }     
         }
@@ -286,18 +286,18 @@ public class mainWindow extends javax.swing.JFrame {
     FileMatcher files=new FileMatcher(".");
     int choice=1;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonBrowse;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JToggleButton buttonPatternContains;
+    private javax.swing.JToggleButton buttonPatternEnds;
+    private javax.swing.JToggleButton buttonRegExPattern;
+    private javax.swing.JButton buttonSearch;
+    private javax.swing.JTextField inputTextField;
     private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
+    private javax.swing.JTextArea outputWindow;
     // End of variables declaration//GEN-END:variables
 }
